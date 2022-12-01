@@ -14,7 +14,8 @@ RUN npm run build
 FROM node:18-alpine AS production
 
 #RUN addgroup -g 1001 viva && adduser -u 1001 -G viva -D viva
-RUN addgroup -g 1001 -S viva && adduser -u 1001 -S viva -G viva
+RUN addgroup -g 1001 -S viva
+RUN adduser -u 1001 -S viva -G viva
 USER viva
 
 WORKDIR /app
